@@ -19,6 +19,9 @@ namespace YARG.Song
             [JsonProperty("Album")]
             public string album;
 
+            [JsonProperty("Playlist")]
+            public string playlist;
+
             [JsonProperty("Genre")]
             public string genre;
 
@@ -46,7 +49,8 @@ namespace YARG.Song
                 {
                     string artist = RichTextUtils.StripRichTextTags(song.Artist);
                     string name = RichTextUtils.StripRichTextTags(song.Name);
-                    output.WriteLine($"{artist} - {name}");
+                    string playlist = RichTextUtils.StripRichTextTags(song.Playlist);
+                    output.WriteLine($"{artist} - {name} from {playlist}");
                 }
                 output.WriteLine("");
             }
@@ -65,6 +69,7 @@ namespace YARG.Song
                     songName = RichTextUtils.StripRichTextTags(song.Name),
                     artistName = RichTextUtils.StripRichTextTags(song.Artist),
                     album = RichTextUtils.StripRichTextTags(song.Album),
+                    playlist = RichTextUtils.StripRichTextTags(song.Playlist),
                     genre = RichTextUtils.StripRichTextTags(song.Genre),
                     charter = RichTextUtils.StripRichTextTags(song.Charter),
                     year = RichTextUtils.StripRichTextTags(song.UnmodifiedYear),
