@@ -50,7 +50,15 @@ namespace YARG.Song
                     string artist = RichTextUtils.StripRichTextTags(song.Artist);
                     string name = RichTextUtils.StripRichTextTags(song.Name);
                     string playlist = RichTextUtils.StripRichTextTags(song.Playlist);
+
+                    if (playlist == "Unknown Playlist")
+                    {
+                    output.WriteLine($"{artist} - {name}");
+                    }
+                    else
+                    {
                     output.WriteLine($"{artist} - {name} from {playlist}");
+                    }
                 }
             }
             output.Flush();
