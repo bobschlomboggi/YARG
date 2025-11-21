@@ -109,3 +109,4 @@ namespace YARG.Song
             File.WriteAllText(path, json);
         }
     }
+}
