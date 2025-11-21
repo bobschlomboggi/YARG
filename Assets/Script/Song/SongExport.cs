@@ -70,34 +70,34 @@ namespace YARG.Song
             var songs = new List<OuvertSongData>();
 
             // Convert SongInfo to OuvertSongData
-             foreach (var song in SongContainer.Songs)
+            foreach (var song in SongContainer.Songs)
             {
                 if(RichTextUtils.StripRichTextTags(song.Playlist) == "Unknown Playlist")
                 {
-                 songs.Add(new OuvertSongData
-                {
-                    songName = RichTextUtils.StripRichTextTags(song.Name),
-                    artistName = RichTextUtils.StripRichTextTags(song.Artist),
-                    album = RichTextUtils.StripRichTextTags(song.Album),
-                    genre = RichTextUtils.StripRichTextTags(song.Genre),
-                    charter = RichTextUtils.StripRichTextTags(song.Charter),
-                    year = RichTextUtils.StripRichTextTags(song.UnmodifiedYear),
-                    songLength = (ulong)song.SongLengthMilliseconds
-                });
+                    songs.Add(new OuvertSongData
+                    {
+                        songName = RichTextUtils.StripRichTextTags(song.Name),
+                        artistName = RichTextUtils.StripRichTextTags(song.Artist),
+                        album = RichTextUtils.StripRichTextTags(song.Album),
+                        genre = RichTextUtils.StripRichTextTags(song.Genre),
+                        charter = RichTextUtils.StripRichTextTags(song.Charter),
+                        year = RichTextUtils.StripRichTextTags(song.UnmodifiedYear),
+                        songLength = (ulong)song.SongLengthMilliseconds
+                    });
                 }
                 else
                 {
-                songs.Add(new OuvertSongData
-                {
-                    songName = RichTextUtils.StripRichTextTags(song.Name),
-                    artistName = RichTextUtils.StripRichTextTags(song.Artist),
-                    album = RichTextUtils.StripRichTextTags(song.Album),
-                    playlist = RichTextUtils.StripRichTextTags(song.Playlist),
-                    genre = RichTextUtils.StripRichTextTags(song.Genre),
-                    charter = RichTextUtils.StripRichTextTags(song.Charter),
-                    year = RichTextUtils.StripRichTextTags(song.UnmodifiedYear),
-                    songLength = (ulong)song.SongLengthMilliseconds
-                });
+                    songs.Add(new OuvertSongData
+                    {
+                        songName = RichTextUtils.StripRichTextTags(song.Name),
+                        artistName = RichTextUtils.StripRichTextTags(song.Artist),
+                        album = RichTextUtils.StripRichTextTags(song.Album),
+                        playlist = RichTextUtils.StripRichTextTags(song.Playlist),
+                        genre = RichTextUtils.StripRichTextTags(song.Genre),
+                        charter = RichTextUtils.StripRichTextTags(song.Charter),
+                        year = RichTextUtils.StripRichTextTags(song.UnmodifiedYear),
+                        songLength = (ulong)song.SongLengthMilliseconds
+                    });
                 }
             }
 
